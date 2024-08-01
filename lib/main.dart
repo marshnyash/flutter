@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'layout_1.dart';
+import 'package:task_1/layout_1.dart';
+import 'package:task_1/layout_2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Layout 1 with IntrinsicHeight'),
+          title: const Text('Layout with IntrinsicHeight and IntrinsicWidth'),
         ),
-        body: const Center(
-          child: Layout1(),
+        body: const SingleChildScrollView(
+          padding: EdgeInsets.all(16.0),
+          child: Center(
+              child: Column(
+                  children: [Layout1(), SizedBox(height: 30), Layout2()])),
         ),
       ),
     );
