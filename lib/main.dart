@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/layout_3.dart';
+import 'package:task_1/layout_slivers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text('Layout with IntrinsicHeight and IntrinsicWidth'),
+            title: const Text('Sticky Headers'),
           ),
-          body: const Layout3()
+          body: const StickyHeaderList()
 
           // TASK: 7636
           // const SingleChildScrollView(
