@@ -1,3 +1,11 @@
 {
-    "helloWorld": "¡Hola Mundo!"
+  "helloWorld": "¡Hola Mundo!",
+  "emailLabel": "¡Email",
+  "@emailLabel": {
+    "description": "The email label"
+  },
+  "phoneLabel": "¡Phone",
+  "@phoneLabel": {
+    "description": "The phone label"
+  }
 }

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ContactForm extends StatefulWidget {
+  const ContactForm({super.key});
+
   @override
-  ContactFormState createState() => ContactFormState();
+  State<ContactForm> createState() => _ContactFormState();
 }
 
-class ContactFormState extends State<ContactForm> {
+class _ContactFormState extends State<ContactForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
@@ -46,7 +48,6 @@ class ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       bool isWideScreen = constraints.maxWidth > 600;
-      // print(isWideScreen);
 
       return Padding(
         padding: const EdgeInsets.all(16.0),
@@ -57,6 +58,8 @@ class ContactFormState extends State<ContactForm> {
             children: [
               _buildFieldWithValidation(
                 controller: _emailController,
+                // labelText: AppLocalizations.of(context)!.hello('John'),
+
                 labelText: 'Email',
                 validator: _validateEmail,
                 errorText: _emailError,
@@ -153,3 +156,51 @@ Widget _buildFieldWithValidation({
     },
   );
 }
+
+// Localizations.override(
+//   context: context,
+//   locale: const Locale('en'),
+//   child: Builder(
+//     builder: (context) {
+//       return Form(
+//           key: _formKey,
+//           child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             children: [
+//               _buildFieldWithValidation(
+//                 controller: _emailController,
+//                 labelText: 'Email',
+//                 validator: _validateEmail,
+//                 errorText: _emailError,
+//                 isWideScreen: isWideScreen,
+//               ),
+//               const SizedBox(height: 16),
+//               _buildFieldWithValidation(
+//                 controller: _phoneController,
+//                 labelText: 'Phone Number',
+//                 validator: _validatePhone,
+//                 errorText: _phoneError,
+//                 isWideScreen: isWideScreen,
+//               ),
+//               const SizedBox(height: 16),
+//               ElevatedButton(
+//                 onPressed: () {
+//                   setState(() {
+//                     _emailError = _validateEmail(_emailController.text);
+//                     _phoneError = _validatePhone(_phoneController.text);
+//                   });
+//
+//                   if (_formKey.currentState!.validate()) {
+//                     ScaffoldMessenger.of(context).showSnackBar(
+//                       const SnackBar(content: Text('Processing Data')),
+//                     );
+//                   }
+//                 },
+//                 child: const Text('Submit'),
+//               ),
+//             ],
+//           ),
+//         ),
+//     },
+//   ),
+// )
