@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:task_1/theme/dark_theme.dart';
+import 'package:task_1/theme/light_theme.dart';
 
-import 'contactForm.dart';
+import 'layouts/contactForm.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Localizations App', // add language
+    return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: ContactForm(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      home: const ContactForm(),
     );
   }
 }
