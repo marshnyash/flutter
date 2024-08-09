@@ -1,0 +1,19 @@
+{
+  "helloWorld": "¡Hola Mundo!",
+  "emailLabel": "¡Email",
+  "@emailLabel": {
+    "description": "The email label"
+  },
+  "phoneLabel": "¡Phone Number",
+  "@phoneLabel": {
+    "description": "The phone label"
+  },
+  "submitLabel": "¡Submit",
+  "@submit": {
+    "description": "The submit label"
+  },
+  "processingData": "¡Processing Data",
+  "@processingData": {
+    "description": "The processing data label"
+  }
+}

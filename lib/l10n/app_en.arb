@@ -1,0 +1,32 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "emailLabel": "Email",
+  "@emailLabel": {
+    "description": "The email label"
+  },
+  "phoneLabel": "Phone Number",
+  "@phoneLabel": {
+    "description": "The phone label"
+  },
+  "submitLabel": "Submit",
+  "@submit": {
+    "description": "The submit label"
+  },
+  "processingData": "Processing Data",
+  "@processingData": {
+    "description": "The processing data label"
+  },
+  "hello": "Hello {userName}",
+  "@hello": {
+    "description": "A message with a single parameter",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  }
+}
