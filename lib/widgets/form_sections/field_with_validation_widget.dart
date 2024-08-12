@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'PaddingSectionWidget.dart';
+import 'padding_section_widget.dart';
+
+const _widthPart = 0.7;
 
 class FieldWithValidationWidget extends StatelessWidget {
   final TextEditingController controller;
@@ -21,8 +23,7 @@ class FieldWithValidationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (context, constraints) {
-          double fieldWidth = constraints.maxWidth * 0.7;
-
+          double fieldWidth = constraints.maxWidth * _widthPart;
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

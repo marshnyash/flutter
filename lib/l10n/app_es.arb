@@ -15,5 +15,17 @@
   "processingData": "¡Processing Data",
   "@processingData": {
     "description": "The processing data label"
+  },
+  "requiredFiledMessage": "¡The field is required",
+  "@requiredFiledMessage": {
+    "description": "Required filed message"
+  },
+  "emailFormatMessage": "¡Invalid email format",
+  "@emailFormatMessage": {
+    "description": "Invalid email format message"
+  },
+  "phoneFormatMessage": "¡Invalid phone number format",
+  "@phoneFormatMessage": {
+    "description": "Invalid phone format message"
   }
 }

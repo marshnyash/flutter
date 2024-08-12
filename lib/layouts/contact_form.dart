@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../utils/inputValidator.dart';
-import '../widgets/formSections/FieldWithValidationWidget.dart';
+import '../validators/email_validator.dart';
+import '../validators/phone_validator.dart';
+import '../widgets/form_sections/field_with_validation_widget.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
@@ -11,12 +12,16 @@ class ContactForm extends StatefulWidget {
   State<ContactForm> createState() => _ContactFormState();
 }
 
-class _ContactFormState extends State<ContactForm> with InputValidator {
+class _ContactFormState extends State<ContactForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   String? _phoneError;
   String? _emailError;
+
+  // Instances of the validators
+  final EmailValidator _emailValidator = EmailValidator();
+  final PhoneValidator _phoneValidator = PhoneValidator();
 
   @override
   void dispose() {
@@ -48,7 +53,8 @@ class _ContactFormState extends State<ContactForm> with InputValidator {
                     FieldWithValidationWidget(
                       controller: _emailController,
                       labelText: appLocalizationContext!.emailLabel,
-                      validator: validateEmail,
+                      validator: (value) => _emailValidator.validate(
+                          value, appLocalizationContext),
                       errorText: _emailError,
                       isWideScreen: isWideScreen,
                     ),
@@ -56,7 +62,8 @@ class _ContactFormState extends State<ContactForm> with InputValidator {
                     FieldWithValidationWidget(
                       controller: _phoneController,
                       labelText: appLocalizationContext.phoneLabel,
-                      validator: validatePhone,
+                      validator: (value) => _phoneValidator.validate(
+                          value, appLocalizationContext),
                       errorText: _phoneError,
                       isWideScreen: isWideScreen,
                     ),
@@ -67,8 +74,10 @@ class _ContactFormState extends State<ContactForm> with InputValidator {
                       ),
                       onPressed: () {
                         setState(() {
-                          _emailError = validateEmail(_emailController.text);
-                          _phoneError = validatePhone(_phoneController.text);
+                          _emailError = _emailValidator.validate(
+                              _emailController.text, appLocalizationContext);
+                          _phoneError = _phoneValidator.validate(
+                              _phoneController.text, appLocalizationContext);
                         });
 
                         if (_formKey.currentState!.validate()) {
