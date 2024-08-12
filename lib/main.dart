@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:task_1/layout_slivers.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:task_1/theme/dark_theme.dart';
+import 'package:task_1/theme/light_theme.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'layouts/contact_form.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,19 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Sticky Headers'),
-          ),
-          body: const StickyHeaderList()
-
-          // TASK: 7636
-          // const SingleChildScrollView(
-          //   padding: EdgeInsets.all(16.0),
-          //   child: Center(child: Column(
-          //   children: [Layout1(), SizedBox(height: 30), Layout2()])),
-          // ),
-          ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      home: const ContactForm(),
     );
   }
+}
+
+void main() {
+  runApp(const MyApp());
 }

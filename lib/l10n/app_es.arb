@@ -1,0 +1,31 @@
+{
+  "helloWorld": "¡Hola Mundo!",
+  "emailLabel": "¡Email",
+  "@emailLabel": {
+    "description": "The email label"
+  },
+  "phoneLabel": "¡Phone Number",
+  "@phoneLabel": {
+    "description": "The phone label"
+  },
+  "submitLabel": "¡Submit",
+  "@submit": {
+    "description": "The submit label"
+  },
+  "processingData": "¡Processing Data",
+  "@processingData": {
+    "description": "The processing data label"
+  },
+  "requiredFiledMessage": "¡The field is required",
+  "@requiredFiledMessage": {
+    "description": "Required filed message"
+  },
+  "emailFormatMessage": "¡Invalid email format",
+  "@emailFormatMessage": {
+    "description": "Invalid email format message"
+  },
+  "phoneFormatMessage": "¡Invalid phone number format",
+  "@phoneFormatMessage": {
+    "description": "Invalid phone format message"
+  }
+}
